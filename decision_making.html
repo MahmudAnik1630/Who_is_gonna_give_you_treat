@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #000000;
+        font-family: Arial, sans-serif;
+        color: #333;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffffff;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .image {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 190px;
+      }
+      .image img {
+        width: 200px;
+        height: auto;
+      }
+      .btnn {
+        text-align: center;
+      }
+      .button {
+        border: 1px solid gold;
+        border-radius: 20px;
+        width: 240px;
+        text-align: center;
+        background-color:gold;
+        padding: 10px;
+        margin-top: 60px;
+        font-size: 120%;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-bottom: 200px;
+      }
+      .button:hover {
+        background-color: green;
+        color: rgb(227, 195, 195);
+        transition: 0.7s;
+      }
+      #whoimg {
+        margin-top: 100px;
+        background-color: gold;
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10%;
+      }
+      #willgive {
+        margin-top: 50px;
+      }
+
+      .whoimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        margin-left: 290px;
+      }
+      .anik,.habib,.anika,.count {
+        background-color:  rgb(135, 95, 21);
+        width: 300px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:1%;
+        margin-top: 30px;
+        
+        
+      }
+      .textarea h1 {
+        color: #000000;
+        font-size: 25px;
+        margin-right: 180px ;
+      }
+      .textarea {
+        text-align: center;
+        margin-top: 40px;
+      }
+      #a1{
+        margin-left: 14px;
+      }
+      .count{
+
+        background-color: rgb(135, 95, 21);
+      }
+     
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS for Fun 🤯</h1>
+
+    <div id="image" class="image">
+      <div class="img">
+        <img src="1.jpg" alt="" />
+        <h1>Anik</h1>
+      </div>
+
+      <div class="img">
+        <img src="2.jpg" alt="" />
+        <h1>Habib</h1>
+      </div>
+
+      <div class="img">
+        <img src="3.jpg" alt="" />
+        <h1>Anika</h1>
+      </div>
+    </div>
+
+    <div class="text">
+      <h1 id="willgive" class="who">Who's gonna give you guys treat 😩 ???</h1>
+    </div>
+
+    <div class="whoimg">
+      <img id="whoimg" src="4.jpg" alt="" />
+      <div class="textarea">
+        <div id="anik" class="anik">
+          <h1>Anik : <h2 id="a1">0</h2></h1>
+        </div>
+        <div id="habib" class="habib">
+            <h1>Habib : <h2 id="b1">0</h2></h1>
+        </div>
+        <div id="anika" class="anika">
+            <h1>Anika : <h2 id="c1">0</h2></h1>
+        </div>
+        <div id="count" class="count">
+            <h1>Count : <h2 id="d1">0</h2></h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="btnn">
+      <button class="button" id="btn" onclick="whoo()">
+        Who??Who?Who 🫨
+      </button>
+      <button class="button" id="rbtn" onclick="reset()">
+        Reset
+      </button>
+    </div>
+
+
+    
+
+    <script>
+        let anik=0;
+        let habib=0;
+        let anika=0;
+        let count=0;
+      function whoo() {
+        count++;
+        console.log(count);
+        document.getElementById("d1").innerHTML = count;
+        document.getElementById("count").style.backgroundColor='orange';
+        let who = Math.floor(Math.random() * 3) + 1;
+        let img = document.getElementById("whoimg");
+        img.src = who + ".jpg";
+        if (who == 1) {
+            anik++;
+            document.getElementById("a1").innerHTML = anik;
+            document.getElementById("anik").style.backgroundColor='orange';
+          document.getElementById("willgive").innerHTML =
+            "Anik is gonna give you treat 🍔🍟🍗";
+        } else if (who == 2) {
+            habib++;
+            document.getElementById("b1").innerHTML = habib;
+            document.getElementById("habib").style.backgroundColor='orange';
+          document.getElementById("willgive").innerHTML =
+            "Habib is gonna give you treat 🍔🍟🍗";
+        } else {
+            anika++;
+            document.getElementById("c1").innerHTML = anika;
+            document.getElementById("anika").style.backgroundColor='orange';
+          document.getElementById("willgive").innerHTML =
+            "Anika is gonna give you treat 🍔🍟🍗";
+        }
+        if(count==5)
+        {
+            document.getElementById("btn").disabled = true;
+
+            document.getElementById('btn').style.backgroundColor = "rgb(135, 95, 21)";
+            document.getElementById("btn").innerHTML =
+            "Beyond the Limit";
+           
+        }
+      }
+
+      function reset()
+      {
+        anik=0;
+        habib=0;
+        anika=0;
+        count=0;
+        document.getElementById("a1").innerHTML = anik;
+        document.getElementById("b1").innerHTML = habib;
+        document.getElementById("c1").innerHTML = anika;
+        document.getElementById("d1").innerHTML = count;
+        document.getElementById("willgive").innerHTML =
+            "Who's gonna give you guys treat 😩 ???";
+            document.getElementById("count").style.backgroundColor='gold';
+            document.getElementById("anik").style.backgroundColor='rgb(135, 95, 21)';
+            document.getElementById("habib").style.backgroundColor='rgb(135, 95, 21)';
+            document.getElementById("anika").style.backgroundColor='rgb(135, 95, 21)';
+            document.getElementById("whoimg").src="4.jpg";
+            document.getElementById("btn").innerHTML =
+            "Who??Who?Who 🫨";
+            document.getElementById("btn").style.backgroundColor='gold';
+
+            document.getElementById("btn").disabled = false;
+
+           
+
+          
+            
+
+      }
+      console.log(count);
+    </script>
+  </body>
+</html>
