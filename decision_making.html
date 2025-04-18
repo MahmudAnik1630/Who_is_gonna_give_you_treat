@@ -7,6 +7,7 @@
         font-family: Arial, sans-serif;
         color: #333;
         padding: 20px;
+        margin: 0;
       }
 
       h1 {
@@ -18,6 +19,8 @@
         font-size: 16px;
         line-height: 1.5;
       }
+
+      /* Original desktop styles */
       .image {
         margin-top: 50px;
         display: flex;
@@ -36,7 +39,7 @@
         border-radius: 20px;
         width: 240px;
         text-align: center;
-        background-color:gold;
+        background-color: gold;
         padding: 10px;
         margin-top: 60px;
         font-size: 120%;
@@ -61,6 +64,7 @@
       }
       #willgive {
         margin-top: 50px;
+        text-align: center;
       }
 
       .whoimg {
@@ -70,39 +74,123 @@
         gap: 100px;
         margin-left: 290px;
       }
-      .anik,.habib,.anika,.count {
-        background-color:  rgb(135, 95, 21);
+      .anik, .habib, .anika, .count {
+        background-color: rgb(135, 95, 21);
         width: 300px;
         height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius:1%;
+        border-radius: 1%;
         margin-top: 30px;
-        
-        
       }
       .textarea h1 {
         color: #000000;
         font-size: 25px;
-        margin-right: 180px ;
+        margin-right: 180px;
       }
       .textarea {
         text-align: center;
         margin-top: 40px;
       }
-      #a1{
+      #a1 {
         margin-left: 14px;
       }
-      .count{
-
+      .count {
         background-color: rgb(135, 95, 21);
       }
-     
+
+      /* Media queries for medium phones (601px - 768px) */
+      @media only screen and (max-width: 768px) {
+        .image {
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+        }
+        
+        .image .img {
+          text-align: center;
+        }
+        
+        .image img {
+          width: 150px;
+        }
+        
+        .whoimg {
+          flex-direction: column;
+          margin-left: 0;
+          gap: 20px;
+        }
+        
+        #whoimg {
+          margin-left: 0;
+          width: 200px;
+          height: 200px;
+        }
+        
+        .textarea {
+          margin-top: 20px;
+        }
+        
+        .anik, .habib, .anika, .count {
+          width: 250px;
+          margin: 15px auto;
+        }
+        
+        .textarea h1 {
+          margin-right: 0;
+          font-size: 20px;
+        }
+        
+        .button {
+          width: 180px;
+          margin-right: 5px;
+          margin-bottom: 100px;
+        }
+      }
+
+      /* Media queries for small phones (up to 600px) */
+      @media only screen and (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        
+        h1 {
+          font-size: 24px;
+        }
+        
+        .image img {
+          width: 120px;
+        }
+        
+        #whoimg {
+          width: 150px;
+          height: 150px;
+        }
+        
+        .anik, .habib, .anika, .count {
+          width: 200px;
+          height: 40px;
+        }
+        
+        .textarea h1 {
+          font-size: 16px;
+        }
+        
+        .button {
+          width: 140px;
+          font-size: 100%;
+          margin-bottom: 50px;
+        }
+        
+        #willgive {
+          font-size: 18px;
+        }
+      }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JS for Fun</title>
   </head>
   <body>
     <h1>JS for Fun 🤯</h1>
@@ -155,9 +243,6 @@
       </button>
     </div>
 
-
-    
-
     <script>
         let anik=0;
         let habib=0;
@@ -193,11 +278,9 @@
         if(count==5)
         {
             document.getElementById("btn").disabled = true;
-
             document.getElementById('btn').style.backgroundColor = "rgb(135, 95, 21)";
             document.getElementById("btn").innerHTML =
             "Beyond the Limit";
-           
         }
       }
 
@@ -213,7 +296,7 @@
         document.getElementById("d1").innerHTML = count;
         document.getElementById("willgive").innerHTML =
             "Who's gonna give you guys treat 😩 ???";
-            document.getElementById("count").style.backgroundColor='gold';
+            document.getElementById("count").style.backgroundColor='rgb(135, 95, 21)';
             document.getElementById("anik").style.backgroundColor='rgb(135, 95, 21)';
             document.getElementById("habib").style.backgroundColor='rgb(135, 95, 21)';
             document.getElementById("anika").style.backgroundColor='rgb(135, 95, 21)';
@@ -221,14 +304,7 @@
             document.getElementById("btn").innerHTML =
             "Who??Who?Who 🫨";
             document.getElementById("btn").style.backgroundColor='gold';
-
             document.getElementById("btn").disabled = false;
-
-           
-
-          
-            
-
       }
       console.log(count);
     </script>
